@@ -50,8 +50,9 @@ class MainActivity : AppCompatActivity() {
 
         setListener(alertDialog)
 
-        binding.btnViewGenres.setOnClickListener {
-            val intent = Intent(this, GenreListActivity::class.java)
+        // Navegar al formulario de contacto
+        binding.btnOpenContactForm.setOnClickListener {
+            val intent = Intent(this, ContactFormActivity::class.java)
             startActivity(intent)
         }
     }

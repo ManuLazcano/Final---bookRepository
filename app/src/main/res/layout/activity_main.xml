@@ -21,11 +21,11 @@
         android:src="@drawable/ic_add"/>
 
     <Button
-        android:id="@+id/btn_view_genres"
+        android:id="@+id/btnOpenContactForm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:text="Formulario de Contacto"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:text="Ver Géneros"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"/>
 </RelativeLayout>
