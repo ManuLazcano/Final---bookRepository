@@ -15,19 +15,24 @@ class BookListAdapter(
     private val bookViewModel: BookViewModel
 ) : RecyclerView.Adapter<BookViewHolder>() {
 
+    // Crea una nueva instancia de ViewHolder y la vincula con la vista del ítem
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
         val binding = BookItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return BookViewHolder(binding, bookViewModel)
     }
 
+    // Crea una nueva instancia de ViewHolder y la vincula con la vista del ítem
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         val book = bookList[position]
         holder.bind(book)
+
+        // Configura el clic en el ítem para mostrar los detalles del libro
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
+            // Crea un Intent para iniciar BookDetailsActivity
             val intent = Intent(context, BookDetailsActivity::class.java).apply {
-                putExtra("BOOK_TITLE", book.title)
-                putExtra("BOOK_SYNOPSIS", book.synopsis)
+                putExtra("BOOK_TITLE", book.title) // Pasa el título del libro
+                putExtra("BOOK_SYNOPSIS", book.synopsis) // Pasa la sinopsis del libro
             }
             context.startActivity(intent)
         }
@@ -37,7 +42,7 @@ class BookListAdapter(
 
     fun updateBookList(newBookList: List<Book>) {
         bookList = newBookList
-        notifyDataSetChanged()
+        notifyDataSetChanged() // Notifica al RecyclerView que los datos han cambiado
     }
 }
 

@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Formulario de contacto"
+        android:text="@string/formulario_de_contacto"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center"
@@ -20,14 +20,14 @@
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre"
+        android:hint="@string/nombre"
         android:padding="8dp" />
 
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Correo electrónico"
+        android:hint="@string/correo_electr_nico"
         android:layout_marginTop="16dp"
         android:padding="8dp" />
 
@@ -35,7 +35,7 @@
         android:id="@+id/etMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Mensaje"
+        android:hint="@string/mensaje"
         android:layout_marginTop="16dp"
         android:padding="8dp" />
 
@@ -50,13 +50,32 @@
             android:id="@+id/btnSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enviar" />
+            android:text="@string/enviar" />
 
         <Button
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Volver"
+            android:text="@string/volver"
             android:layout_marginStart="16dp" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSponsors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sponsors"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="54dp"
+        android:paddingBottom="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSponsors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:padding="8dp" />
 </LinearLayout>

@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar Nuevo Libro"
+        android:text="@string/agregar_nuevo_libro"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
@@ -18,34 +18,36 @@
         android:id="@+id/etTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título"/>
+        android:hint="@string/t_tulo"/>
 
     <EditText
         android:id="@+id/etAuthor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Autor"
+        android:hint="@string/autor"
         android:layout_marginTop="8dp"/>
 
     <EditText
         android:id="@+id/etGenre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Género"
+        android:hint="@string/g_nero"
         android:layout_marginTop="8dp"/>
 
     <EditText
         android:id="@+id/etSynopsis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Sinopsis"
+        android:hint="@string/sinopsis"
         android:layout_marginTop="8dp"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabPlus"
+    <Button
+        android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_add"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginLeft="10dp"
+        android:text="@string/agregar" />
+
+
 </LinearLayout>

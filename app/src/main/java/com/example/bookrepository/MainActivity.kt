@@ -24,29 +24,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Inflar los bindings para la vista principal y el diálogo
         binding = ActivityMainBinding.inflate(layoutInflater)
         dialogBookBinding = DialogBookBinding.inflate(layoutInflater)
+
+        // Crear y configurar el AlertDialog para añadir un libro
         val alertDialogBuilder = AlertDialog.Builder(this)
         alertDialogBuilder.setView(dialogBookBinding.root)
         val alertDialog = alertDialogBuilder.create()
         setContentView(binding.root)
 
+        // Inicializar el ViewModel y el adaptador
         bookViewModel = BookViewModel()
         bookListAdapter = BookListAdapter(listOf(), bookViewModel)
+
         initRecycler()
 
+        // Observar los cambios en la lista de libros del ViewModel
         bookViewModel.bookList.observe(this, Observer { bookList ->
             bookListAdapter.updateBookList(bookList)
         })
-
-        /*
-        enableEdgeToEdge()
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-        */
 
         setListener(alertDialog)
 
@@ -68,11 +65,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Mostrar el diálogo para añadir un libro y manejar el evento de añadir
     private fun showAlertDialog(alertDialog: AlertDialog) {
         alertDialog.show()
         clearEditText()
 
-        dialogBookBinding.fabPlus.setOnClickListener {
+        dialogBookBinding.btnAdd.setOnClickListener {
             val title = addTitle()
             val author = addAuthor()
             val genre = addGenre()

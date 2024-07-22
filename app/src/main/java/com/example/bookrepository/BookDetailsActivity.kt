@@ -14,6 +14,7 @@ class BookDetailsActivity : AppCompatActivity() {
         binding = ActivityBookDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Obtener el título y la sinopsis del libro del intent, obtiene un extra de tipo String del intent que lanzó esta actividad
         val title = intent.getStringExtra("BOOK_TITLE") ?: ""
         val synopsis = intent.getStringExtra("BOOK_SYNOPSIS") ?: ""
 
@@ -21,9 +22,7 @@ class BookDetailsActivity : AppCompatActivity() {
         binding.tvBookSynopsis.text = synopsis
 
         binding.btnBackToMain.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-            startActivity(intent)
+
             finish()
         }
     }

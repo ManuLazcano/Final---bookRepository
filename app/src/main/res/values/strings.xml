@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">bookRepository</string>
+    <string name="volver">Volver</string>
+    <string name="formulario_de_contacto">Formulario de contacto</string>
+    <string name="nombre">Nombre</string>
+    <string name="correo_electr_nico">Correo electrónico</string>
+    <string name="mensaje">Mensaje</string>
+    <string name="enviar">Enviar</string>
+    <string name="sponsors">Sponsors</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="agregar_nuevo_libro">Agregar Nuevo Libro</string>
+    <string name="t_tulo">Título</string>
+    <string name="autor">Autor</string>
+    <string name="g_nero">Género</string>
+    <string name="sinopsis">Sinopsis</string>
+    <string name="agregar">Agregar</string>
+    <string name="sponsor_logo">Sponsor Logo</string>
 </resources>

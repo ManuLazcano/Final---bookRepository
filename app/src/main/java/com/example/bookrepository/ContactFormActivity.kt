@@ -3,16 +3,23 @@ package com.example.bookrepository
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bookrepository.adapter.SponsorListAdapter
+import com.example.bookrepository.data.SponsorList
 import com.example.bookrepository.databinding.ActivityContactFormBinding
 
 class ContactFormActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityContactFormBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Inflar los bindings para la vista del formulario de contacto
         binding = ActivityContactFormBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Configurar el botón de envío del formulario
         binding.btnSubmit.setOnClickListener {
             val name = binding.etName.text.toString()
             val email = binding.etEmail.text.toString()
@@ -28,13 +35,20 @@ class ContactFormActivity : AppCompatActivity() {
         }
 
         binding.btnBack.setOnClickListener {
-            finish() // Volver a la actividad anterior
+            finish()
         }
+
+        initRecycler()
     }
 
     private fun clearForm() {
         binding.etName.text.clear()
         binding.etEmail.text.clear()
         binding.etMessage.text.clear()
+    }
+
+    private fun initRecycler() {
+        binding.rvSponsors.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvSponsors.adapter = SponsorListAdapter(SponsorList.listOfSponsors)
     }
 }

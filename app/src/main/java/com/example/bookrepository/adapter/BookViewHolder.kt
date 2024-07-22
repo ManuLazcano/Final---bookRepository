@@ -13,11 +13,12 @@ class BookViewHolder(
     private val bookViewModel: BookViewModel
 ) : RecyclerView.ViewHolder(binding.root) {
 
+    // Asocia los datos del libro con la vista
     fun bind(book: Book) {
+        // Establece los valores de los campos en el ítem del libro
         binding.tvTitle.text = book.title
         binding.tvAuthor.text = book.author
         binding.tvGenre.text = book.genre
-        //binding.tvSynopsis.text = book.synopsis
 
         binding.btnEdit.setOnClickListener {
             showEditDialog(book)
@@ -34,12 +35,14 @@ class BookViewHolder(
         dialogBuilder.setView(dialogBookBinding.root)
         val alertDialog = dialogBuilder.create()
 
+        // Rellena los campos del diálogo con la información actual del libro
         dialogBookBinding.etTitle.setText(book.title)
         dialogBookBinding.etAuthor.setText(book.author)
         dialogBookBinding.etGenre.setText(book.genre)
         dialogBookBinding.etSynopsis.setText(book.synopsis)
 
-        dialogBookBinding.fabPlus.setOnClickListener {
+        // Configura el botón de añadir en el diálogo para actualizar el libro
+        dialogBookBinding.btnAdd.setOnClickListener {
             val updatedTitle = dialogBookBinding.etTitle.text.toString()
             val updatedAuthor = dialogBookBinding.etAuthor.text.toString()
             val updatedGenre = dialogBookBinding.etGenre.text.toString()
@@ -54,6 +57,7 @@ class BookViewHolder(
         alertDialog.show()
     }
 
+    // Muestra un diálogo para confirmar la eliminación del libro
     private fun showDeleteDialog(book: Book) {
         val dialogBuilder = AlertDialog.Builder(binding.root.context)
         dialogBuilder.setTitle("Confirmar eliminación")
